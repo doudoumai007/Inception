@@ -1,0 +1,31 @@
+services:
+  mariadb:
+    build: ./requirements/mariadb
+    container_name: mariadb-test
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: wp_password
+    networks:
+      - inception
+
+  wordpress:
+    build: ./requirements/wordpress
+    container_name: wordpress-test
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: wp_password
+      MYSQL_HOST: mariadb-test
+    networks:
+      - inception
+  
+  client:
+    image: debian:bullseye
+    container_name: client-test
+    command: sleep infinity
+    networks:
+      - inception
+  
+networks:
+  inception:

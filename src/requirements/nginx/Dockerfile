@@ -20,7 +20,7 @@ RUN mkdir -p /etc/nginx/ssl && \
     -newkey rsa:2048 \
     -keyout /etc/nginx/ssl/inception.key \
     -out /etc/nginx/ssl/inception.crt \
-    -subj "/C=FR/ST=IDFL=Paris/O=42/CN=localhost"
+    -subj "/C=FR/ST=IDF/L=Paris/O=42/CN=localhost"
 
 # 把我们自己写的nginx配置,替换掉默认配置
 COPY conf/nginx.config /etc/nginx/sites-available/default
@@ -28,4 +28,4 @@ COPY conf/nginx.config /etc/nginx/sites-available/default
 EXPOSE 443
 
 # daemon off是告诉NGINX"别在后台默默运行(默认行为),要在前台运行
-CMD ["nginx", "-g" "daemon off; "]
+CMD ["nginx", "-g", "daemon off;"]

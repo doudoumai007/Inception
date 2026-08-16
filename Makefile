@@ -18,10 +18,10 @@ clean: down
 	docker system prune -af
 
 fclean: clean
-# 	@sudo rm -rf $(shell grep DATA_PATH srcs/.env | cut -d '=' -f2)/mariadb
-# 	@sudo rm -rf $(shell grep DATA_PATH srcs/.env | cut -d '=' -f2)/wordpress
-	podman unshare rm -rf $(DATA_PATH)/mariadb
-	podman unshare rm -rf $(DATA_PATH)/wordpress
+	@sudo rm -rf $(shell grep DATA_PATH srcs/.env | cut -d '=' -f2)/mariadb
+	@sudo rm -rf $(shell grep DATA_PATH srcs/.env | cut -d '=' -f2)/wordpress
+# 	podman unshare rm -rf $(DATA_PATH)/mariadb
+# 	podman unshare rm -rf $(DATA_PATH)/wordpress
 	docker volume prune -f
 	docker network prune -f
 

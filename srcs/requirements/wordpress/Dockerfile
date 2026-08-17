@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:bookworm
 
 # apt 是Debian/Ubuntu系统的包管理器(package manager)——专门用来安装、卸载、更新系统软件的工具
 # update:刷新本地的软件包索引列表

@@ -11,25 +11,25 @@ RUN apt-get update && \
     ca-certificates \
 
     # PHP的"FastCGI进程管理器"——真正让PHP代码能跑起来、处理网页请求的核心服务
-    php7.4-fpm \
+    php8.2-fpm \
 
     # PHP连接MySQL/MariaDB数据库用的扩展模块——WordPress要读写数据库,必须装这个才能"说得上话"
-    php7.4-mysql \
+    php8.2-mysql \
 
     # PHP里发起网络请求用的扩展(WordPress有些功能,比如检查更新、外部API调用,需要这个)
-    php7.4-curl \
+    php8.2-curl \
 
     # PHP处理图片用的扩展(比如WordPress自动生成缩略图、裁剪图片时要用)
-    php7.4-gd \
+    php8.2-gd \
 
     # 处理"多字节字符"用的扩展(比如中文、日文这种一个字符占多个字节的文字,没有这个可能出现乱码或功能异常
-    php7.4-mbstring \
+    php8.2-mbstring \
 
     # 处理XML格式数据用的扩展(WordPress导入导出内容、部分插件功能会用到XML)
-    php7.4-xml \
+    php8.2-xml \
 
     # 处理zip压缩文件用的扩展(WordPress装插件/主题时,经常需要解压zip包)
-    php7.4-zip \
+    php8.2-zip \
 
     # 命令行下载/网络请求工具(下载wp-cli要用它)
     curl \

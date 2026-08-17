@@ -52,7 +52,7 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 
 # 把php-fpm的监听方式,从Unix socket改成TCP的0.0.0.0:9000,
 # 这样nginx容器才能通过网络(而不是本地socket)连接到它
-RUN sed -i 's|listen = /run/php/php7.4-fpm.sock|listen = 0.0.0.0:9000|' /etc/php/7.4/fpm/pool.d/www.conf
+RUN sed -i 's|listen = /run/php/php8.2-fpm.sock|listen = 0.0.0.0:9000|' /etc/php/8.2/fpm/pool.d/www.conf
 
 COPY tools/setup.sh /setup.sh
 

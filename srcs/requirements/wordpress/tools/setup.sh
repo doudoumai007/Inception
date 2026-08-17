@@ -90,7 +90,7 @@ echo "Starting PHP-FPM..."
 
 # -F 是"foreground"(前台运行,不要daemonize成后台进程)
 mkdir -p /run/php
-exec php-fpm7.4  -F
+exec php-fpm8.2  -F
 
 # WordPress 是一个"建站程序"——你不需要自己从零写代码(HTML、CSS、后端逻辑全都自己写)
 # 而是装好WordPress之后,它已经帮你把一个网站需要的东西都搭好了:

@@ -68,6 +68,10 @@ if [ ! -f wp-config.php ]; then
         --admin_password="${WP_ADMIN_PASSWORD}" \
         --admin_email="${WP_ADMIN_EMAIL}" \
         --path=/var/www/html
+    
+    # comments setting: users must be registered and logged in to comment
+    sudo -u www-data wp option update comment_registration 1 --path=/var/www/html
+
 else
     echo "WordPress already configured, skipping config/install."
 fi
